@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary.BO
+namespace Foundation
 {
-    public class Truck : Vechile
+    public class Class1
     {
-        public Business Business { get; set; }
     }
 }
