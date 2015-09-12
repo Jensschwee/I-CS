@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ME1_jacmi13", "ME1_jacmi13\ME1_jacmi13.csproj", "{DA943008-236D-47E4-9CF5-E899908967DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ME1_WPF", "ME1_jacmi13\ME1_WPF.csproj", "{DA943008-236D-47E4-9CF5-E899908967DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{1BF10A3A-C5B4-4BAC-95A3-9F00D426997A}"
 EndProject
