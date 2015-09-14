@@ -9,6 +9,7 @@ namespace Common
     [Serializable]
     public class Car : Vechile
     {
+        public  Car() { }
         public Car(string model, double price, State state, string color) : base(model, price, state, color)
         {
             

@@ -35,7 +35,7 @@ namespace ME1
         private void registerBusinessHandler(object sender, RoutedEventArgs e)
         {
             CustomerManager.RegisterBusinessCustomer(txtBusinessFax.Text, txtBusinessCompanyname.Text, txtBusinessContactPerson.Text, txtBusinessCVR.Text,
-                                                        txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text, 
+                                                        txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text,
                                                         txtBusinessZipcode.Text, txtBusinessCountry.Text);
         }
 
@@ -49,12 +49,12 @@ namespace ME1
         {
             //if radio = car
             // state = radio button med 3 forskellige states
-            if (true)
-            {
-                CarManager.RegisterCar();
-            }
-            else
-                CarManager.RegisterTruckCar();
+            //if (true)
+            //{
+            //    CarManager.RegisterCar();
+            //}
+            //else
+            //    CarManager.RegisterTruckCar();
 
             //RegisterCar(string model, double price, State state)
 
