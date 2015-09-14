@@ -23,7 +23,6 @@ namespace ME1
     /// </summary>
     public partial class MainWindow : Window
     {
-        // CustomerManager til registering af private- og forretningskunder
         private CustosmerManager CustomerManager = new CustosmerManager();
         private ContractManager ContractManager = new ContractManager();
         private CarManager CarManager = new CarManager();
@@ -35,8 +34,6 @@ namespace ME1
 
         private void registerBusinessHandler(object sender, RoutedEventArgs e)
         {
-            // opret en forretningskunde med hans oplysninger
-            // sæt variaberne på objektet og send objektet ned mod dmoænelaget og domænelaget sender det ned mod foundation-laget
             CustomerManager.RegisterBusinessCustomer(txtBusinessFax.Text, txtBusinessCompanyname.Text, txtBusinessContactPerson.Text, txtBusinessCVR.Text,
                                                         txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text, 
                                                         txtBusinessZipcode.Text, txtBusinessCountry.Text);
@@ -46,6 +43,11 @@ namespace ME1
         {
             CustomerManager.RegisterPrivateCustomer(txtPrivateAge.Text, txtPrivateSex.Text, txtPrivateName.Text, txtPrvatePhone.Text, txtPrivateAddress.Text,
                                                         txtPrivateCity.Text, txtPrivateZipcode.Text, txtPrivateCountry.Text);
+        }
+
+        private void registerCarHandler(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
