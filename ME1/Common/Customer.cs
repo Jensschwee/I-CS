@@ -13,7 +13,12 @@ namespace Common
         private String Phone;
         private Address address;
 
-        public void TestMethod() { }
+        public Customer(string name, string phone, string personalAddress, string city, string postCode, string country)
+        {
+            Name = name;
+            Phone = phone;
+            address = new Address(personalAddress,city,postCode,country);
 
+        }
     }
 }
