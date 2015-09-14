@@ -18,13 +18,15 @@ namespace Foundation
         public List<Common.Business> ReadBusiness()
         {
             List<Business> businessList = null;
-            using (Stream stream = File.Open(fileBusinessLocation, FileMode.Open))
+            if (File.Exists(filePrivateLocation))
             {
-                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                using (Stream stream = File.Open(fileBusinessLocation, FileMode.Open))
+                {
+                    BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                 businessList = (List<Business>)bformatter.Deserialize(stream);
+                    businessList = (List<Business>) bformatter.Deserialize(stream);
+                }
             }
-
             return businessList;
 
         }
@@ -43,14 +45,17 @@ namespace Foundation
         public List<Private> ReadPrivate()
         {
             List<Private> privatesList = null;
-            using (Stream stream = File.Open(filePrivateLocation, FileMode.Open))
+            if (File.Exists(filePrivateLocation))
             {
-                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                using (Stream stream = File.Open(filePrivateLocation, FileMode.Open))
+                {
+                    BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                privatesList = (List<Private>)bformatter.Deserialize(stream);
+                    privatesList = (List<Private>) bformatter.Deserialize(stream);
+                }
             }
 
-            return privatesList;
+    return privatesList;
         }
 
         public void WritePrivate(List<Private> privatesList)

@@ -18,11 +18,14 @@ namespace Foundation
         public List<Car> ReadCars()
         {
             List<Car> carList = null;
-            using (Stream stream = File.Open(FileCarLocation, FileMode.Open))
+            if (File.Exists(FileCarLocation))
             {
-                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                using (Stream stream = File.Open(FileCarLocation, FileMode.Open))
+                {
+                    BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                carList = (List<Car>)bformatter.Deserialize(stream);
+                    carList = (List<Car>) bformatter.Deserialize(stream);
+                }
             }
             return carList;
 
@@ -41,11 +44,14 @@ namespace Foundation
         public List<Truck> ReadTrucks()
         {
             List<Truck> truckList = null;
-            using (Stream stream = File.Open(FileTruckLocation, FileMode.Open))
+            if (File.Exists(FileTruckLocation))
             {
-                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                using (Stream stream = File.Open(FileTruckLocation, FileMode.Open))
+                {
+                    BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                truckList = (List<Truck>)bformatter.Deserialize(stream);
+                    truckList = (List<Truck>) bformatter.Deserialize(stream);
+                }
             }
             return truckList;
         }
