@@ -96,6 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{1afe598e-cd6e-483b-ab07-576b6127b1a1}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{1bf10a3a-c5b4-4bac-95a3-9f00d426997a}</Project>
       <Name>Domain</Name>

@@ -13,8 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Common;
 
-namespace ME1_jacmi13
+namespace ME1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -32,7 +33,7 @@ namespace ME1_jacmi13
             // 2. gem dem i variable
             // 3. send objektet ned mod databasen
 
-            Business b = new Domain.Business();
+            Business b = new Business();
             // sæt variaberne på objektet og send objektet ned mod dmoænelaget og domænelaget sender det ned mod foundation-laget
 
             String BusinessNameFieldTest = BusinessNameField.Text;

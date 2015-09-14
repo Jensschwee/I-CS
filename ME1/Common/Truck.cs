@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Common
 {
-    class Private : Customer
+    class Truck : Vechile
     {
-        public String Age { get; set; }
-        public String Sex { get; set; }
-
     }
 }
