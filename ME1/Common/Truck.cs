@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    [Serializable]
     public class Truck : Vechile
     {
+        public Truck(string model, double price, string state) : base(model, price, state)
+        {
+            
+        }
     }
 }

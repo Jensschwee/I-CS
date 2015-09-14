@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    class Car : Vechile
+    [Serializable]
+    public class Car : Vechile
     {
+        public Car(string model, double price, string state) : base(model, price, state)
+        {
+            
+        }
+
     }
 }

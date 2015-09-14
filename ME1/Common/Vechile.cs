@@ -6,13 +6,25 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    [Serializable]
     public class Vechile
     {
-        public int ID { get; set; }
-        public String Model { get; set; }
+        public string ID { get; set; }
+        public string Model { get; set; }
         public double Price { get; set; }
-        public String State { get; set; }
-        
+        public Common.State State { get; set; }
 
+        public Vechile(string model, double price, Common.State state)
+        {
+            Model = model;
+            Price = price;
+            State = state;
+        }
+
+    }
+
+    public enum State
+    {
+        COMMISSON, SOLD,LEASED
     }
 }
