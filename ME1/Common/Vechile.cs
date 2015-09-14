@@ -12,19 +12,23 @@ namespace Common
         public string ID { get; set; }
         public string Model { get; set; }
         public double Price { get; set; }
+
+        public string Color { get; set; }
+
         public Common.State State { get; set; }
 
-        public Vechile(string model, double price, Common.State state)
+        public Vechile(string model, double price, Common.State state, string color)
         {
             Model = model;
             Price = price;
             State = state;
+            Color = color;
         }
 
     }
 
     public enum State
     {
-        COMMISSON, SOLD,LEASED
+        COMMISSON, SOLD,LEASED, INSTOCK
     }
 }

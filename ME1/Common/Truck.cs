@@ -9,7 +9,7 @@ namespace Common
     [Serializable]
     public class Truck : Vechile
     {
-        public Truck(string model, double price, string state) : base(model, price, state)
+        public Truck(string model, double price, State state, string color) : base(model, price, state, color)
         {
             
         }

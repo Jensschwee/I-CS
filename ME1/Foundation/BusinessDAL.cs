@@ -67,7 +67,7 @@ namespace Foundation
         public void WritePrivate(List<Private> privatesList)
         {
             System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Business));
+                new System.Xml.Serialization.XmlSerializer(typeof(Private));
 
             System.IO.FileStream file = System.IO.File.Create(filePrivateLocation);
 
