@@ -25,17 +25,25 @@ namespace Domain
         {
             Business business = new Business(fax,companyName,contractPerson,cVR,name,phone,personalAddress,city,postCode,country);
             listBusinesses.Add(business);
-            saveBusinessCustomer(listBusinesses);
+            SaveBusinessCustomer(listBusinesses);
         }
 
-        public void RegisterPrivateCustomer()
+        public void RegisterPrivateCustomer(string age, string sex, string name, string phone, string personalAddress, string city, string postCode, string country)
         {
+            Private privateObj = new Private(age, sex, name, phone, personalAddress, city, postCode, country);
+            listPrivates.Add(privateObj);
+            SavePrivateCustomer(listPrivates);
 
         }
 
-        public void saveBusinessCustomer(List<Business> businessObj)
+        private void SaveBusinessCustomer(List<Business> businessObjList)
         {
-            dal.WriteBusiness(businessObj);
+            dal.WriteBusiness(businessObjList);
+        }
+
+        private void SavePrivateCustomer(List<Private> privateObjList)
+        {
+            dal.WritePrivate(privateObjList);
         }
     }
 }
