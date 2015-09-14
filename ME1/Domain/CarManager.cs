@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Class1
+    class CarManager
     {
+            public void RegisterCar()
+            {
+            }
+
+        public void RegisterTruckCar()
+        {
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    class Private : Customer
+    public class Private : Customer
     {
         public String Age { get; set; }
         public String Sex { get; set; }

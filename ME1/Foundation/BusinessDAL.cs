@@ -7,7 +7,7 @@ using Common;
 
 namespace Foundation
 {
-    public class BusinessDal
+    public class CustosmerDal
     {
         private static string fileLocation = "~/BusinessObj.obj";
 

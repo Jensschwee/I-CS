@@ -32,7 +32,7 @@ namespace ME1
             // 1. indlæs værdierne fra textfields
             // 2. gem dem i variable
             // 3. send objektet ned mod databasen
-
+            
             Business b = new Business();
             // sæt variaberne på objektet og send objektet ned mod dmoænelaget og domænelaget sender det ned mod foundation-laget
 
