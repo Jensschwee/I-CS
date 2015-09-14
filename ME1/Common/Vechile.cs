@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    class Vechile
+    public class Vechile
     {
         public int ID { get; set; }
         public String Model { get; set; }

@@ -14,6 +14,8 @@ namespace Common
         private String Phone;
         private Address address;
 
+        public Customer() { }
+
         public Customer(string name, string phone, string personalAddress, string city, string postCode, string country)
         {
             Name = name;
