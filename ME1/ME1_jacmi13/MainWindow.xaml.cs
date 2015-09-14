@@ -41,5 +41,11 @@ namespace ME1
                                                         txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text, 
                                                         txtBusinessZipcode.Text, txtBusinessCountry.Text);
         }
+
+        private void registerPrivateCustomerHandler(object sender, RoutedEventArgs e)
+        {
+            CustomerManager.RegisterPrivateCustomer(txtPrivateAge.Text, txtPrivateSex.Text, txtPrivateName.Text, txtPrvatePhone.Text, txtPrivateAddress.Text,
+                                                        txtPrivateCity.Text, txtPrivateZipcode.Text, txtPrivateCountry.Text);
+        }
     }
 }
