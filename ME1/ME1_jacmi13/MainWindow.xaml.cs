@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Common;
+using Domain;
 
 namespace ME1
 {
@@ -22,6 +23,11 @@ namespace ME1
     /// </summary>
     public partial class MainWindow : Window
     {
+        // CustomerManager til registering af private- og forretningskunder
+        private CustosmerManager CustomerManager = new CustosmerManager();
+        private ContractManager ContractManager = new ContractManager();
+        private CarManager CarManager = new CarManager();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,21 +35,11 @@ namespace ME1
 
         private void registerBusinessHandler(object sender, RoutedEventArgs e)
         {
-            // 1. indlæs værdierne fra textfields
-            // 2. gem dem i variable
-            // 3. send objektet ned mod databasen
-            
-            Business b = new Business();
+            // opret en forretningskunde med hans oplysninger
             // sæt variaberne på objektet og send objektet ned mod dmoænelaget og domænelaget sender det ned mod foundation-laget
-
-            String BusinessNameFieldTest = BusinessNameField.Text;
-            b.CVR = BusinessNameFieldTest;
-            // evt. lav en domæne/klasse-manager på domænet, som har alle metoder, og den manager har så referencer til alle klasser
-            // smid objektet videre ned i lagene
-            b.RegisterBusiness(b);
-            
-
-            Console.WriteLine(BusinessNameFieldTest);
+            CustomerManager.RegisterBusinessCustomer(txtBusinessFax.Text, txtBusinessCompanyname.Text, txtBusinessContactPerson.Text, txtBusinessCVR.Text,
+                                                        txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text, 
+                                                        txtBusinessZipcode.Text, txtBusinessCountry.Text);
         }
     }
 }

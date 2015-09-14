@@ -12,19 +12,31 @@
             <Grid Background="#FFE5E5E5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="31*"/>
-                    <ColumnDefinition Width="42*"/>
-                    <ColumnDefinition Width="12*"/>
-                    <ColumnDefinition Width="597*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="113*"/>
+                    <ColumnDefinition Width="538*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="137,309,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Click="registerBusinessHandler"/>
-                <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="19,23,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="3"/>
-                <TextBox x:Name="BusinessNameField" HorizontalAlignment="Left" Height="23" Margin="26,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
-                <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="26,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
-                <Label x:Name="label_Copy" Content="Phone" HorizontalAlignment="Left" Margin="19,60,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="3"/>
-                <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Height="23" Margin="26,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
-                <Label x:Name="label_Copy1" Content="Address" HorizontalAlignment="Left" Margin="19,138,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="3"/>
-                <Label x:Name="label_Copy2" Content="CVR" HorizontalAlignment="Left" Margin="19,91,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.ColumnSpan="3"/>
-                <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Height="23" Margin="26,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="45,352,0,0" VerticalAlignment="Top" Width="75" Grid.Column="3" Click="registerBusinessHandler" Height="22"/>
+                <Label x:Name="label" Content="Name" HorizontalAlignment="Left" Margin="3,23,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="42"/>
+                <TextBox x:Name="txtBusinessPersonName" HorizontalAlignment="Left" Height="23" Margin="0,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <TextBox x:Name="txtBusinessPhone" HorizontalAlignment="Left" Height="23" Margin="0,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy" Content="Phone" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="44"/>
+                <TextBox x:Name="txtBusinessCompanyname" HorizontalAlignment="Left" Height="23" Margin="0,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy1" Content="Address" HorizontalAlignment="Left" Margin="3,91,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="53"/>
+                <Label x:Name="label_Copy2" Content="CVR" HorizontalAlignment="Left" Margin="30,251,0,0" VerticalAlignment="Top" Height="26" Width="32" Grid.ColumnSpan="3"/>
+                <TextBox x:Name="txtBusinessAddress" HorizontalAlignment="Left" Height="23" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <TextBox x:Name="txtBusinessCVR" HorizontalAlignment="Left" Height="23" Margin="0,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy3" Content="Fax" HorizontalAlignment="Left" Margin="0,310,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="27"/>
+                <TextBox x:Name="txtBusinessContactPerson" HorizontalAlignment="Left" Height="23" Margin="0,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy4" Content="Companyname" HorizontalAlignment="Left" Margin="30,220,0,0" VerticalAlignment="Top" Width="95" Height="26" Grid.ColumnSpan="3"/>
+                <TextBox x:Name="txtBusinessFax" HorizontalAlignment="Left" Height="23" Margin="0,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy5" Content="Contact person" HorizontalAlignment="Left" Margin="30,282,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="104" Height="26"/>
+                <TextBox x:Name="txtBusinessCity" HorizontalAlignment="Left" Height="23" Margin="0,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <TextBox x:Name="txtBusinessZipcode" HorizontalAlignment="Left" Height="23" Margin="0,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy6" Content="Zipcode" HorizontalAlignment="Left" Margin="30,122,0,0" VerticalAlignment="Top" Height="26" Width="53" Grid.ColumnSpan="3"/>
+                <Label x:Name="label_Copy7" Content="City" HorizontalAlignment="Left" Margin="30,151,0,0" VerticalAlignment="Top" Height="26" Width="53" Grid.ColumnSpan="3"/>
+                <TextBox x:Name="txtBusinessCountry" HorizontalAlignment="Left" Height="23" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.Column="3"/>
+                <Label x:Name="label_Copy8" Content="Country" HorizontalAlignment="Left" Margin="30,179,0,0" VerticalAlignment="Top" Height="26" Width="53" Grid.ColumnSpan="3"/>
             </Grid>
         </TabItem>
         <TabItem Header="Register private">

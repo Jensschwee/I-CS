@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    class ContractManager
+    public class ContractManager
     {
         public void RegisterLeasing()
         {
