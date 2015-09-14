@@ -50,6 +50,7 @@
     <Compile Include="Leasing.cs" />
     <Compile Include="Private.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestClassJustDeleteAfter.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Vechile.cs" />
   </ItemGroup>
