@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="CarManager.cs" />
     <Compile Include="ContractManager.cs" />
-    <Compile Include="CustosmerManager.cs" />
+    <Compile Include="CustomerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

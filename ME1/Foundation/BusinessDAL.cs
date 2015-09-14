@@ -9,6 +9,10 @@ using Common;
 
 namespace Foundation
 {
+    /// <summary>
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
+    /// </summary>
     public class CustosmerDal
     {
         private readonly static string fileBusinessLocation = Directory.GetCurrentDirectory() + "\\BusinessObj.obj";

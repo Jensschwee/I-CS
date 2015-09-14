@@ -9,6 +9,10 @@ using Common;
 
 namespace Foundation
 {
+    /// <summary>
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
+    /// </summary>
     public class CarDAL
     {
         private readonly static string FileCarLocation = Directory.GetCurrentDirectory() + "\\CarObj.obj";

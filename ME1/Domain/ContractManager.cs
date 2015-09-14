@@ -7,6 +7,10 @@ using Common;
 
 namespace Domain
 {
+    /// <summary>
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
+    /// </summary>
     public class ContractManager
     {
         public void RegisterLeasing(Business business, double rentPerMonth, DateTime startRentPeriod, DateTime rentPeriodEnd)

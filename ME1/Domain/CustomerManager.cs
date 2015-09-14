@@ -8,14 +8,18 @@ using Foundation;
 
 namespace Domain
 {
-    public class CustosmerManager
+    /// <summary>
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
+    /// </summary>
+    public class CustomerManager
     {
         
         private CustosmerDal dal = new CustosmerDal();
         private List<Business> listBusinesses;
         private List<Private> listPrivates;
 
-        public CustosmerManager()
+        public CustomerManager()
         {
             List<Business> tempBusiness = dal.ReadBusiness();
             listBusinesses = tempBusiness ?? new List<Business>();

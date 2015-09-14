@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    /// <summary>
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
+    /// </summary>
     [Serializable]
     public class Truck : Vechile
     {

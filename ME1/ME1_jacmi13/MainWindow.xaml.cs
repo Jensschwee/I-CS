@@ -19,11 +19,12 @@ using Domain;
 namespace ME1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// <author>Jens Schwee & Jacob Michelsen</author>
+    /// <date>14/09/2015</date>
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CustosmerManager CustomerManager = new CustosmerManager();
+        private CustomerManager CustomerManager = new CustomerManager();
         private ContractManager ContractManager = new ContractManager();
         private CarManager CarManager = new CarManager();
 
