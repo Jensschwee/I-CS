@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
@@ -17,62 +18,46 @@ namespace Foundation
         public List<Car> ReadCars()
         {
             List<Car> carList = null;
-            try
+            using (Stream stream = File.Open(FileCarLocation, FileMode.Open))
             {
-                System.Xml.Serialization.XmlSerializer reader =
-                new System.Xml.Serialization.XmlSerializer(typeof(Business));
-                System.IO.StreamReader file = new System.IO.StreamReader(FileCarLocation);
-                carList = (List<Car>)reader.Deserialize(file);
-                file.Close();
-            }
-            catch (Exception)
-            {
+                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
+                carList = (List<Car>)bformatter.Deserialize(stream);
             }
-
             return carList;
 
         }
 
         public void WriteCars(List<Car> carList)
         {
-            System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Car));
+            using (Stream stream = File.Open(FileCarLocation, FileMode.Create))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            System.IO.FileStream file = System.IO.File.Create(FileCarLocation);
-
-            writer.Serialize(file, carList);
-            file.Close();
+                bformatter.Serialize(stream, carList);
+            }
         }
 
         public List<Truck> ReadTrucks()
         {
             List<Truck> truckList = null;
-            try
+            using (Stream stream = File.Open(FileTruckLocation, FileMode.Open))
             {
-                System.Xml.Serialization.XmlSerializer reader =
-                new System.Xml.Serialization.XmlSerializer(typeof(Truck));
-                System.IO.StreamReader file = new System.IO.StreamReader(FileTruckLocation);
-                truckList = (List<Truck>)reader.Deserialize(file);
-                file.Close();
-            }
-            catch (Exception)
-            {
+                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
+                truckList = (List<Truck>)bformatter.Deserialize(stream);
             }
-
             return truckList;
         }
 
         public void WriteTrucks(List<Truck> truckList)
         {
-            System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Truck));
+            using (Stream stream = File.Open(FileTruckLocation, FileMode.Create))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            System.IO.FileStream file = System.IO.File.Create(FileTruckLocation);
-
-            writer.Serialize(file, truckList);
-            file.Close();
+                bformatter.Serialize(stream, truckList);
+            }
         }
 
 

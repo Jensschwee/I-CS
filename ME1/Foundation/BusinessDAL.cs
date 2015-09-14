@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
@@ -17,62 +18,49 @@ namespace Foundation
         public List<Common.Business> ReadBusiness()
         {
             List<Business> businessList = null;
-            try
+            using (Stream stream = File.Open(fileBusinessLocation, FileMode.Open))
             {
-                System.Xml.Serialization.XmlSerializer reader =
-                new System.Xml.Serialization.XmlSerializer(typeof(Business));
-                System.IO.StreamReader file = new System.IO.StreamReader(fileBusinessLocation);
-                businessList = (List<Business>)reader.Deserialize(file);
-                file.Close();
+                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+                 businessList = (List<Business>)bformatter.Deserialize(stream);
             }
-            catch (Exception)
-            {
-                
-            }
-            
+
             return businessList;
 
         }
 
         public void WriteBusiness(List<Business> businessList)
         {
-            System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Business));
 
-            System.IO.FileStream file = System.IO.File.Create(fileBusinessLocation);
+            using (Stream stream = File.Open(fileBusinessLocation, FileMode.Create))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            writer.Serialize(file, businessList);
-            file.Close();
+                bformatter.Serialize(stream, businessList);
+            }
         }
 
         public List<Private> ReadPrivate()
         {
             List<Private> privatesList = null;
-            try
+            using (Stream stream = File.Open(filePrivateLocation, FileMode.Open))
             {
-                System.Xml.Serialization.XmlSerializer reader =
-                new System.Xml.Serialization.XmlSerializer(typeof(Private));
-                System.IO.StreamReader file = new System.IO.StreamReader(filePrivateLocation);
-                privatesList = (List<Private>)reader.Deserialize(file);
-                file.Close();
+                BinaryFormatter bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+                privatesList = (List<Private>)bformatter.Deserialize(stream);
             }
-            catch (Exception)
-            {
-                
-            }
-            
+
             return privatesList;
         }
 
         public void WritePrivate(List<Private> privatesList)
         {
-            System.Xml.Serialization.XmlSerializer writer =
-                new System.Xml.Serialization.XmlSerializer(typeof(Private));
+            using (Stream stream = File.Open(filePrivateLocation, FileMode.Create))
+            {
+                var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-            System.IO.FileStream file = System.IO.File.Create(filePrivateLocation);
-
-            writer.Serialize(file, privatesList);
-            file.Close();
+                bformatter.Serialize(stream, privatesList);
+            }
         }
     }
 }

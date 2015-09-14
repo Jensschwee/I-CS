@@ -17,6 +17,8 @@ namespace Common
 
         public Common.State State { get; set; }
 
+        public Vechile() { }
+
         public Vechile(string model, double price, Common.State state, string color)
         {
             Model = model;

@@ -35,7 +35,7 @@ namespace ME1
         private void registerBusinessHandler(object sender, RoutedEventArgs e)
         {
             CustomerManager.RegisterBusinessCustomer(txtBusinessFax.Text, txtBusinessCompanyname.Text, txtBusinessContactPerson.Text, txtBusinessCVR.Text,
-                                                        txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text, 
+                                                        txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text,
                                                         txtBusinessZipcode.Text, txtBusinessCountry.Text);
         }
 
