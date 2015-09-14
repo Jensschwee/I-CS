@@ -47,6 +47,18 @@ namespace ME1
 
         private void registerCarHandler(object sender, RoutedEventArgs e)
         {
+            //if radio = car
+            // state = radio button med 3 forskellige states
+            if (true)
+            {
+                CarManager.RegisterCar();
+            }
+            else
+                CarManager.RegisterTruckCar();
+
+            //RegisterCar(string model, double price, State state)
+
+            //RegisterTruckCar(string model, double price, State state)
 
         }
     }

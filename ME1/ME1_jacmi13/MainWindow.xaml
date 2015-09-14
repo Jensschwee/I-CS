@@ -77,7 +77,16 @@
                     <ColumnDefinition Width="617*"/>
                 </Grid.ColumnDefinitions>
                 <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Margin="-30,290,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="button" Content="Register" Grid.Column="3" HorizontalAlignment="Left" Margin="159,290,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+                <Button x:Name="button" Content="Register" Grid.Column="3" HorizontalAlignment="Left" Margin="179,214,0,0" VerticalAlignment="Top" Width="75" Click="registerCarHandler" RenderTransformOrigin="-1.187,-0.364"/>
+                <RadioButton x:Name="radioRegisterCar" Content="Car" HorizontalAlignment="Left" Margin="6,182,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <Label x:Name="label2" Content="Choose vechile  type:&#xD;&#xA;" HorizontalAlignment="Left" Margin="3,140,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.Column="1"/>
+                <RadioButton x:Name="radioRegisterTruck" Content="Truck" HorizontalAlignment="Left" Margin="53,182,0,0" VerticalAlignment="Top" Grid.Column="3"/>
+                <Label x:Name="label3" Content="Price" Grid.Column="1" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                <Label x:Name="label3_Copy" Content="Model" Grid.Column="1" HorizontalAlignment="Left" Margin="0,73,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+                <Label x:Name="label3_Copy1" Content="Color" Grid.Column="2" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" RenderTransformOrigin="0.333,0.538"/>
+                <TextBox x:Name="txtRegisterPrice" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="134,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtRegisterModel" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="134,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtRegsiterColor" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="134,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             </Grid>
         </TabItem>
     </TabControl>
