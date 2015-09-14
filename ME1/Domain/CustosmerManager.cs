@@ -17,8 +17,12 @@ namespace Domain
 
         public CustosmerManager()
         {
-            listBusinesses = dal.ReadBusiness();
-            listPrivates = dal.ReadPrivate();
+            List<Business> tempBusiness = dal.ReadBusiness();
+            listBusinesses = tempBusiness ?? new List<Business>();
+
+            List<Private> tempPrivates = dal.ReadPrivate();
+            listPrivates = tempPrivates ?? new List<Private>();
+
         }
 
         public void RegisterBusinessCustomer(string fax, string companyName, string contractPerson, string cVR, string name, string phone, string personalAddress, string city, string postCode, string country)

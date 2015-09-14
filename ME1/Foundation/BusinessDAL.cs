@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,26 @@ namespace Foundation
 {
     public class CustosmerDal
     {
-        private static string fileBusinessLocation = "~/BusinessObj.obj";
-        private static string filePrivateLocation = "~/PrivateObj.obj";
+        private readonly static string fileBusinessLocation = Directory.GetCurrentDirectory() + "\\BusinessObj.obj";
+        private readonly static string filePrivateLocation = Directory.GetCurrentDirectory() + "\\PrivateObj.obj";
 
 
         public List<Common.Business> ReadBusiness()
         {
-            System.Xml.Serialization.XmlSerializer reader =
+            List<Business> businessList = null;
+            try
+            {
+                System.Xml.Serialization.XmlSerializer reader =
                 new System.Xml.Serialization.XmlSerializer(typeof(Business));
-            System.IO.StreamReader file = new System.IO.StreamReader(fileBusinessLocation);
-            List<Business> businessList = (List<Business>)reader.Deserialize(file);
-            file.Close();
+                System.IO.StreamReader file = new System.IO.StreamReader(fileBusinessLocation);
+                businessList = (List<Business>)reader.Deserialize(file);
+                file.Close();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
             return businessList;
 
         }
@@ -37,11 +47,20 @@ namespace Foundation
 
         public List<Private> ReadPrivate()
         {
-            System.Xml.Serialization.XmlSerializer reader =
-                new System.Xml.Serialization.XmlSerializer(typeof(Business));
-            System.IO.StreamReader file = new System.IO.StreamReader(filePrivateLocation);
-            List<Private> privatesList = (List<Private>)reader.Deserialize(file);
-            file.Close();
+            List<Private> privatesList = null;
+            try
+            {
+                System.Xml.Serialization.XmlSerializer reader =
+                new System.Xml.Serialization.XmlSerializer(typeof(Private));
+                System.IO.StreamReader file = new System.IO.StreamReader(filePrivateLocation);
+                privatesList = (List<Private>)reader.Deserialize(file);
+                file.Close();
+            }
+            catch (Exception)
+            {
+                
+            }
+            
             return privatesList;
         }
 

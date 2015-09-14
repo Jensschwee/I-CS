@@ -17,6 +17,11 @@ namespace Common
 
         public String CVR { get; set; }
 
+        public Business()
+        {
+            
+        }
+
         public Business(string fax, string companyName, string contractPerson, string cVR, string name, string phone, string personalAddress, string city, string postCode, string country, List<Truck> truckList = null) : 
             base (name,phone,personalAddress,city,postCode,country)
         {
