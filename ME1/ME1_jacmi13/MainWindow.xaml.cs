@@ -47,19 +47,14 @@ namespace ME1
 
         private void registerCarHandler(object sender, RoutedEventArgs e)
         {
-            //if radio = car
-            // state = radio button med 3 forskellige states
-            if (true)
+            if (radioRegisterCar.IsChecked == true)
             {
-                CarManager.RegisterCar();
+                Console.Out.WriteLine("Test");
+                CarManager.RegisterCar(txtRegisterModel.Text, Double.Parse(txtRegisterPrice.Text), txtRegsiterColor.Text);
+                Console.Out.WriteLine("Test2");
             }
             else
-                CarManager.RegisterTruckCar();
-
-            //RegisterCar(string model, double price, State state)
-
-            //RegisterTruckCar(string model, double price, State state)
-
+                CarManager.RegisterTruckCar(txtRegisterModel.Text, Double.Parse(txtRegisterPrice.Text), txtRegsiterColor.Text);
         }
     }
 }
