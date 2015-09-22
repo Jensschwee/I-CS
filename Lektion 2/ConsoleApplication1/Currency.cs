@@ -10,7 +10,7 @@ namespace ShopApp
     /// @Author sps
     /// Currency specifikation
     /// </summary>
-    class Currency
+    public class Currency
     {
         private string name;
         public string Name { get { return name; } }

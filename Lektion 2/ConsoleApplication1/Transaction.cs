@@ -25,7 +25,7 @@ namespace ShopApp
         }
 
         public float Amount
-        {
+        {   
             get { return ((float)amount)/100; }
             set { amount = (long)(value*100); }
         }
@@ -54,26 +54,26 @@ namespace ShopApp
         // Override ToString() method so it return string ex. " 678.34 USD 
         public override string ToString()
         {
-            return "Amount " + amount.ToString() + " " + this.Cur.Name;
+            return "Amount " + Amount + " " + this.Cur.Name;
         }
 
         // Implement overload of + operator
         public static Transaction operator +(Transaction t, long l)
         {
-            return t.amount+=l;
+            return t.Amount+=l;
         }
 
 
         // Implement overlod of - operator
         public static Transaction operator -(Transaction t, long l)
         {
-            return t.amount-=l;
+            return t.Amount -= l;
         }
 
         // Implement overload of * operator
         public static Transaction operator *(Transaction t, long l)
         {
-            return t.amount*l;
+            return t.Amount* l;
         }
 
         // Implement explicit operator Transaction to int

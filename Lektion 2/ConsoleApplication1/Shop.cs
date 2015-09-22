@@ -6,19 +6,20 @@ using System.Threading.Tasks;
 
 namespace ShopApp
 {
-    class Shop<T>
+    public class Shop
     {
         private List<Currency> cur = new List<Currency>(); // Maybe better with a Dictanary
         Acount myCount = new Acount();
 
-        static void Main(string[] args)
+       public  static void Main(string[] args)
         {
-            Shop<Acount> netBuy = new Shop<Acount>();
+            Shop netBuy = new Shop();
             netBuy.cur.Add(new Currency("kr", 100, "Denmark"));
             netBuy.cur.Add( new Currency("EUR", 746, "EU"));
             netBuy.cur.Add(new Currency("USD", 660, "USA"));
             netBuy.SeeDeposit();
             netBuy.Transfer(10000f, netBuy.cur[2]); 
+            
             // Buy 10 thing with different price, number and currency
             netBuy.Buy(100.6789f, 30, netBuy.cur[0]);
             // Show you can list all buys by using a foreach loop
@@ -60,10 +61,10 @@ namespace ShopApp
             Console.Out.WriteLine(myCount.CalcDeposit().ToString());
         }
 
-        public T AMethod(T input)
-        {
-            return input;
-        }
+        //public T AMethod(T input)
+        //{
+        //    return input;
+        //}
 
     }
     

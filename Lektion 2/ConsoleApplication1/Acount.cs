@@ -27,11 +27,10 @@ namespace ShopApp
 
             foreach (Transaction trans in tList)
             {
-                float conIndex =  t.Cur.Value/trans.Cur.Value;
+                float conIndex =  trans.Cur.Value/ t.Cur.Value;
 
-                t.amount += (long)(conIndex*trans.amount);
+                t.Amount += conIndex*trans.Amount;
             }
-            
             return t;
         }
 
