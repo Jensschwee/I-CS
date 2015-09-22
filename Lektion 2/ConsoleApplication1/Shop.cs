@@ -13,7 +13,7 @@ namespace ShopApp
 
         static void Main(string[] args)
         {
-            Shop netBuy = new Shop();
+            Shop<Acount> netBuy = new Shop<Acount>();
             netBuy.cur.Add(new Currency("kr", 100, "Denmark"));
             netBuy.cur.Add( new Currency("EUR", 746, "EU"));
             netBuy.cur.Add(new Currency("USD", 660, "USA"));
@@ -57,7 +57,7 @@ namespace ShopApp
 
         public void SeeDeposit()
         {
-            Console.Out.WriteLine(myCount.calcDeposit().ToString());
+            Console.Out.WriteLine(myCount.CalcDeposit().ToString());
         }
 
         public T AMethod(T input)

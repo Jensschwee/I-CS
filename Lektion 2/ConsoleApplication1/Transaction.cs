@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace ShopApp
 {
+    /// <summary>
+    /// 
+    /// </summary>
     class Transaction: IComparable
     {
         public DateTime TDate { get; set; }
@@ -28,33 +31,69 @@ namespace ShopApp
         }
 
         // Implement IComparable means CompareTo method
-
-
-        // Override ToString() method so it return string ex. " 678.34 USD 
-        
-
-        // Implement overload of + operator
-        
-
-        // Implement overlod of - operator
-        
-
-
-        // Implement overload of * operator
-       
-        
-        // Implement explicit operator Transaction to int
-        
-    
-        // Implement explicit operator Transaction to float
-       
-       
-        // Implement implicit operator float to Transaction
-
-
         public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (obj.GetType() == typeof(Transaction))
+                return -1;
+
+            Transaction t = (Transaction) obj;
+
+            if (this.Equals(t))
+            {
+                return 0;
+            }
+
+            if (this.TDate > t.TDate)
+                return -1;
+            if (this.TDate < t.TDate)
+                return 1;
+            else
+                return 0;
         }
+
+        // Override ToString() method so it return string ex. " 678.34 USD 
+        public override string ToString()
+        {
+            return "Amount " + amount.ToString() + " " + this.Cur.Name;
+        }
+
+        // Implement overload of + operator
+        public static Transaction operator +(Transaction t, long l)
+        {
+            return t.amount+=l;
+        }
+
+
+        // Implement overlod of - operator
+        public static Transaction operator -(Transaction t, long l)
+        {
+            return t.amount-=l;
+        }
+
+        // Implement overload of * operator
+        public static Transaction operator *(Transaction t, long l)
+        {
+            return t.amount*l;
+        }
+
+        // Implement explicit operator Transaction to int
+        public static explicit operator int(Transaction r)
+        {
+            return (int)r.amount;
+        }
+
+        // Implement explicit operator Transaction to float
+        public static explicit operator float(Transaction r)
+        {
+            return (float)r.amount;
+        }
+
+        // Implement implicit operator float to Transaction
+        public static implicit operator Transaction (float r)
+        {
+            return new Transaction(DateTime.Now, new Currency(),r);
+        }
+
+
     }
 }
