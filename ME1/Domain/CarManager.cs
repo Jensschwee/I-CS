@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,11 +37,34 @@ namespace Domain
             
         }
 
+        public void RegisterCar(string model, string price, string color)
+        {
+            double doPrice = 0.0;
+            if (double.TryParse(price, out doPrice))
+            {
+                RegisterCar(model, doPrice, color);
+            }
+            else
+                throw new InvalidCastException();
+
+        }
+
         public void RegisterTruckCar(string model, double price, string color)
         {
             Truck truck = new Truck(model, price, State.INSTOCK, color);
             truckList.Add(truck);
             SaveTruck(truckList);
+        }
+
+        public void RegisterTruckCar(string model, string price, string color) 
+        {
+            double doPrice = 0.0;
+            if (double.TryParse(price, out doPrice))
+            {
+                RegisterTruckCar(model, doPrice, color);
+            }
+            else
+                throw new InvalidCastException();
         }
 
         private void SaveCars(List<Car> cars)
