@@ -38,24 +38,78 @@ namespace ME1
             CustomerManager.RegisterBusinessCustomer(txtBusinessFax.Text, txtBusinessCompanyname.Text, txtBusinessContactPerson.Text, txtBusinessCVR.Text,
                                                         txtBusinessPersonName.Text, txtBusinessPhone.Text, txtBusinessAddress.Text, txtBusinessCity.Text,
                                                         txtBusinessZipcode.Text, txtBusinessCountry.Text);
+            ClearTxtBusiness();
+        }
+
+        private void ClearTxtBusiness()
+        {
+            txtBusinessFax.Clear();
+            txtBusinessCompanyname.Clear();
+            txtBusinessContactPerson.Clear();
+            txtBusinessCVR.Clear();
+            txtBusinessPersonName.Clear();
+            txtBusinessPhone.Clear();
+            txtBusinessAddress.Clear();
+            txtBusinessCity.Clear();
+            txtBusinessZipcode.Clear();
+            txtBusinessCountry.Clear();
         }
 
         private void registerPrivateCustomerHandler(object sender, RoutedEventArgs e)
         {
             CustomerManager.RegisterPrivateCustomer(txtPrivateAge.Text, txtPrivateSex.Text, txtPrivateName.Text, txtPrvatePhone.Text, txtPrivateAddress.Text,
                                                         txtPrivateCity.Text, txtPrivateZipcode.Text, txtPrivateCountry.Text);
+            ClearTxtPrivate();
+        }
+
+        private void ClearTxtPrivate()
+        {
+            txtPrivateAge.Clear();
+            txtPrivateSex.Clear();
+            txtPrivateName.Clear();
+            txtPrvatePhone.Clear();
+            txtPrivateAddress.Clear();
+            txtPrivateCity.Clear();
+            txtPrivateZipcode.Clear();
+            txtPrivateCountry.Clear();
         }
 
         private void registerCarHandler(object sender, RoutedEventArgs e)
         {
             if (radioRegisterCar.IsChecked == true)
             {
-                Console.Out.WriteLine("Test");
-                CarManager.RegisterCar(txtRegisterModel.Text, Double.Parse(txtRegisterPrice.Text), txtRegsiterColor.Text);
-                Console.Out.WriteLine("Test2");
+                try
+                {
+                    CarManager.RegisterCar(txtRegisterModel.Text, txtRegisterPrice.Text, txtRegsiterColor.Text);
+                    ClearTxtCar();
+
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("Error in input: This is not a price");
+                }
             }
             else
-                CarManager.RegisterTruckCar(txtRegisterModel.Text, Double.Parse(txtRegisterPrice.Text), txtRegsiterColor.Text);
+            {
+                try
+                {
+                    CarManager.RegisterTruckCar(txtRegisterModel.Text, txtRegisterPrice.Text, txtRegsiterColor.Text);
+                    ClearTxtCar();
+                }
+                catch (InvalidCastException)
+                {
+                    MessageBox.Show("Error in input: This is not a price");
+                }
+            }
+
+
+        }
+
+        private void ClearTxtCar()
+        {
+            txtRegisterModel.Clear();
+            txtRegisterPrice.Clear();
+            txtRegsiterColor.Clear();
         }
     }
 }
