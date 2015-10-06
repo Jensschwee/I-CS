@@ -20,15 +20,12 @@ namespace Lotto
 
         public DanskeSpil() { }
 
-        private static List<LottoPlayer> players = new List<LottoPlayer>();
         static void Main(string[] args)
         {
             DanskeSpil ds = new DanskeSpil();
             LottoPlayer pl = new LottoPlayer(ds);
-            players.Add(pl);
-
             pl = new LottoPlayer(ds, new[] { 5, 9, 15, 22, 24, 29, 32 });
-            players.Add(pl);
+            pl = new LottoPlayer(ds, new[] { 15, 19, 20, 25, 26, 29, 30 });
 
             // Try to create more player with different numbers
             // When number is set remember to catch exception
