@@ -13,6 +13,26 @@ public partial class SiteMaster : MasterPage
     private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
     private string _antiXsrfTokenValue;
 
+    /// <summary>
+    /// Dette bruges sammen med <tittel> </tittel>koden på masterpagen
+    /// Den henter fil navnet på den aktive side og sætter den til page tittel,
+    /// vis ikke der er skrævet noget andet i <tittel></tittel> taget på den aktive side.
+    /// </summary>
+    protected string GetFileNameOrFileTittel()
+    {
+        if (string.IsNullOrEmpty(Page.Title))
+        {
+            string sPath = System.Web.HttpContext.Current.Request.Url.AbsolutePath;
+            System.IO.FileInfo oInfo = new System.IO.FileInfo(sPath);
+            string sRet = oInfo.Name.Replace(".aspx", "");
+            return sRet;
+        }
+        else
+        {
+            return Page.Title;
+        }
+
+    }
     protected void Page_Init(object sender, EventArgs e)
     {
         // The code below helps to protect against XSRF attacks
