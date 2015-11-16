@@ -38,6 +38,8 @@
             </Scripts>
         </asp:ScriptManager>
 
+        
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -49,13 +51,14 @@
                     <!--<a class="navbar-brand" runat="server" href="~/">Application name</a>-->
                 </div>
                 <div class="navbar-collapse collapse">
-                    
-                    <ul class="nav navbar-nav">
+                    <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+                        </asp:Menu>
+                    <%--<ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Anonymous/About">About</a></li>
                         <li><a runat="server" href="~/Anonymous/Contact">Contact</a></li>
                         <li><a runat="server" href="~/Customer/CalculateOffer.aspx">Calculate Offer</a></li>
-                    </ul>
+                    </ul>--%>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -83,6 +86,7 @@
                 <!--<p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>-->
             </footer>
         </div>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
     </form>
 </body>
 </html>
