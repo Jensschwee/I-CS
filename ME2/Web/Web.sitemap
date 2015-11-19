@@ -3,8 +3,8 @@
   <siteMapNode url="rootNode">
     <siteMapNode url="~/Default.aspx" title="Home"/>
     <siteMapNode url="~/Customer/CalculateOffer.aspx" title="Calculate Offer"/>
-    <siteMapNode url="~/Cardekaer/AdministrateCars.aspx" title="Administrate Cars"/>
-    <siteMapNode url="~/Cardekaer/CreateLogin.aspx" title="Create Login"/>
+    <siteMapNode url="~/Cardealer/AdministrateCars.aspx" title="Administrate Cars"/>
+    <siteMapNode url="~/Cardealer/CreateLogin.aspx" title="Create Login"/>
     <siteMapNode url="~/Anonymous/About.aspx" title="About"/>
     <siteMapNode url="~/Anonymous/Contact.aspx" title="Contact"/>
   </siteMapNode>
