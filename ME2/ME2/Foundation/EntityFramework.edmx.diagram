@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4ae7b045996745e2be69a6ded53a105c" Name="Diagram1" >
+        <EntityTypeShape EntityType="EntityFramework.Customer" Width="1.5" PointX="7.25" PointY="1.25" />
+        <EntityTypeShape EntityType="EntityFramework.Address" Width="1.5" PointX="3.625" PointY="1.25" />
+        <AssociationConnector Association="EntityFramework.CustomerAddress" />
+        <EntityTypeShape EntityType="EntityFramework.Vechile" Width="1.5" PointX="2.875" PointY="3.25" />
+        <EntityTypeShape EntityType="EntityFramework.Car" Width="1.5" PointX="1.25" PointY="5.625" />
+        <EntityTypeShape EntityType="EntityFramework.Truck" Width="1.5" PointX="3.625" PointY="5.75" />
+        <InheritanceConnector EntityType="EntityFramework.Truck" />
+        <InheritanceConnector EntityType="EntityFramework.Car" />
+        <EntityTypeShape EntityType="EntityFramework.Private" Width="1.5" PointX="9.625" PointY="5.625" />
+        <EntityTypeShape EntityType="EntityFramework.Business" Width="1.5" PointX="9.875" PointY="1.625" />
+        <InheritanceConnector EntityType="EntityFramework.Business" />
+        <InheritanceConnector EntityType="EntityFramework.Private" />
+        <EntityTypeShape EntityType="EntityFramework.Contract" Width="1.5" PointX="6.875" PointY="7.5" />
+        <EntityTypeShape EntityType="EntityFramework.Leasing" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="EntityFramework.Cardealer" Width="1.5" PointX="1.125" PointY="0.875" />
+        <AssociationConnector Association="EntityFramework.CardealerVechile" />
+        <AssociationConnector Association="EntityFramework.ContractPrivate" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="EntityFramework.ContractCar" />
+        <AssociationConnector Association="EntityFramework.LeasingBusiness" />
+        <AssociationConnector Association="EntityFramework.LeasingTruck" />
+        <AssociationConnector Association="EntityFramework.BusinessTruck" />
+        <AssociationConnector Association="EntityFramework.CardealerCustomer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
