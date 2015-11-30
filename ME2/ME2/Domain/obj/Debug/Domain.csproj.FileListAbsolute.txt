@@ -1,0 +1,9 @@
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Domain.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Domain.pdb
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Common.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Foundation.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Common.pdb
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\bin\Debug\Foundation.pdb
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\obj\Debug\Domain.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Domain\obj\Debug\Domain.pdb

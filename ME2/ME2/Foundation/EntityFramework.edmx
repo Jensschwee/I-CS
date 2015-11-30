@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="EntityFramework.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="EntityFrameworkTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EntityFramework" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="EntityFrameworkContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomerSet" EntityType="EntityFramework.Customer" />
+          <EntitySet Name="AddressSet" EntityType="EntityFramework.Address" />
+          <AssociationSet Name="CustomerAddress" Association="EntityFramework.CustomerAddress">
+            <End Role="Customer" EntitySet="CustomerSet" />
+            <End Role="Address" EntitySet="AddressSet" />
+          </AssociationSet>
+          <EntitySet Name="VechileSet" EntityType="EntityFramework.Vechile" />
+          <EntitySet Name="ContractSet" EntityType="EntityFramework.Contract" />
+          <EntitySet Name="LeasingSet" EntityType="EntityFramework.Leasing" />
+          <EntitySet Name="CardealerSet" EntityType="EntityFramework.Cardealer" />
+          <AssociationSet Name="CardealerVechile" Association="EntityFramework.CardealerVechile">
+            <End Role="Cardealer" EntitySet="CardealerSet" />
+            <End Role="Vechile" EntitySet="VechileSet" />
+          </AssociationSet>
+          <AssociationSet Name="ContractPrivate" Association="EntityFramework.ContractPrivate">
+            <End Role="Contract" EntitySet="ContractSet" />
+            <End Role="Private" EntitySet="CustomerSet" />
+          </AssociationSet>
+          <AssociationSet Name="ContractCar" Association="EntityFramework.ContractCar">
+            <End Role="Contract" EntitySet="ContractSet" />
+            <End Role="Car" EntitySet="VechileSet" />
+          </AssociationSet>
+          <AssociationSet Name="LeasingBusiness" Association="EntityFramework.LeasingBusiness">
+            <End Role="Leasing" EntitySet="LeasingSet" />
+            <End Role="Business" EntitySet="CustomerSet" />
+          </AssociationSet>
+          <AssociationSet Name="LeasingTruck" Association="EntityFramework.LeasingTruck">
+            <End Role="Leasing" EntitySet="LeasingSet" />
+            <End Role="Truck" EntitySet="VechileSet" />
+          </AssociationSet>
+          <AssociationSet Name="BusinessTruck" Association="EntityFramework.BusinessTruck">
+            <End Role="Business" EntitySet="CustomerSet" />
+            <End Role="Truck" EntitySet="VechileSet" />
+          </AssociationSet>
+          <AssociationSet Name="CardealerCustomer" Association="EntityFramework.CardealerCustomer">
+            <End Role="Cardealer" EntitySet="CardealerSet" />
+            <End Role="Customer" EntitySet="CustomerSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Address" Relationship="EntityFramework.CustomerAddress" FromRole="Customer" ToRole="Address" />
+          <NavigationProperty Name="Cardealer" Relationship="EntityFramework.CardealerCustomer" FromRole="Customer" ToRole="Cardealer" />
+          <Property Name="CardealerId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Customer" Relationship="EntityFramework.CustomerAddress" FromRole="Address" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CustomerAddress">
+          <End Type="EntityFramework.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="EntityFramework.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Vechile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Cardealer" Relationship="EntityFramework.CardealerVechile" FromRole="Vechile" ToRole="Cardealer" />
+          <Property Name="CardealerId1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Car" BaseType="EntityFramework.Vechile">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Contract" Relationship="EntityFramework.ContractCar" FromRole="Car" ToRole="Contract" />
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Truck" BaseType="EntityFramework.Vechile">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="CardealerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Leasing" Relationship="EntityFramework.LeasingTruck" FromRole="Truck" ToRole="Leasing" />
+          <Property Name="LeasingId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Business" Relationship="EntityFramework.BusinessTruck" FromRole="Truck" ToRole="Business" />
+          <Property Name="BusinessId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Private" BaseType="EntityFramework.Customer">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Contract" Relationship="EntityFramework.ContractPrivate" FromRole="Private" ToRole="Contract" />
+        </EntityType>
+        <EntityType Name="Business" BaseType="EntityFramework.Customer">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Leasing" Relationship="EntityFramework.LeasingBusiness" FromRole="Business" ToRole="Leasing" />
+          <NavigationProperty Name="Truck" Relationship="EntityFramework.BusinessTruck" FromRole="Business" ToRole="Truck" />
+        </EntityType>
+        <EntityType Name="Contract">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Private" Relationship="EntityFramework.ContractPrivate" FromRole="Contract" ToRole="Private" />
+          <NavigationProperty Name="Car" Relationship="EntityFramework.ContractCar" FromRole="Contract" ToRole="Car" />
+        </EntityType>
+        <EntityType Name="Leasing">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Business" Relationship="EntityFramework.LeasingBusiness" FromRole="Leasing" ToRole="Business" />
+          <NavigationProperty Name="Truck" Relationship="EntityFramework.LeasingTruck" FromRole="Leasing" ToRole="Truck" />
+        </EntityType>
+        <EntityType Name="Cardealer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Vechile" Relationship="EntityFramework.CardealerVechile" FromRole="Cardealer" ToRole="Vechile" />
+          <NavigationProperty Name="Customer" Relationship="EntityFramework.CardealerCustomer" FromRole="Cardealer" ToRole="Customer" />
+        </EntityType>
+        <Association Name="CardealerVechile">
+          <End Type="EntityFramework.Cardealer" Role="Cardealer" Multiplicity="1" />
+          <End Type="EntityFramework.Vechile" Role="Vechile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cardealer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vechile">
+              <PropertyRef Name="CardealerId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContractPrivate">
+          <End Type="EntityFramework.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="EntityFramework.Private" Role="Private" Multiplicity="1" />
+        </Association>
+        <Association Name="ContractCar">
+          <End Type="EntityFramework.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="EntityFramework.Car" Role="Car" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Car">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LeasingBusiness">
+          <End Type="EntityFramework.Leasing" Role="Leasing" Multiplicity="1" />
+          <End Type="EntityFramework.Business" Role="Business" Multiplicity="1" />
+        </Association>
+        <Association Name="LeasingTruck">
+          <End Type="EntityFramework.Leasing" Role="Leasing" Multiplicity="1" />
+          <End Type="EntityFramework.Truck" Role="Truck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leasing">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Truck">
+              <PropertyRef Name="LeasingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BusinessTruck">
+          <End Type="EntityFramework.Business" Role="Business" Multiplicity="1" />
+          <End Type="EntityFramework.Truck" Role="Truck" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Business">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Truck">
+              <PropertyRef Name="BusinessId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CardealerCustomer">
+          <End Type="EntityFramework.Cardealer" Role="Cardealer" Multiplicity="1" />
+          <End Type="EntityFramework.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cardealer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CardealerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="EntityFramework" />
+        <Alias Key="Target" Value="EntityFramework.Store" />
+        <EntityContainerMapping CdmEntityContainer="EntityFrameworkContainer" StorageEntityContainer="EntityFrameworkTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

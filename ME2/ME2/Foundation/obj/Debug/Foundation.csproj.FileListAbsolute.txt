@@ -1,0 +1,8 @@
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\bin\Debug\Foundation.dll.config
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\bin\Debug\Foundation.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\bin\Debug\Foundation.pdb
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\bin\Debug\Common.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\bin\Debug\Common.pdb
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\obj\Debug\Foundation.csprojResolveAssemblyReference.cache
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\obj\Debug\Foundation.dll
+\\psf\Home\Documents\I-CS\ME2\ME2\Foundation\obj\Debug\Foundation.pdb
